@@ -1,0 +1,11 @@
+.order-card {
+  max-width: 520px;
+  margin: 32px auto 0 auto;
+  padding: 20px;
+}
+mat-list-item {
+  margin-bottom: 8px;
+}
+ul {
+  padding-left: 24px;
+}

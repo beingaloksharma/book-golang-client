@@ -1,0 +1,17 @@
+mat-card {
+  max-width: 600px;
+  margin: 36px auto;
+  padding: 24px;
+}
+.mat-table {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.totals {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  margin-top: 18px;
+}

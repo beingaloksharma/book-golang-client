@@ -1,0 +1,29 @@
+<div>
+  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  <div *ngIf="!loading && books.length > 0">
+    <mat-card *ngFor="let book of books" class="book-card">
+      <mat-card-title>{{book.title}}</mat-card-title>
+      <mat-card-subtitle>
+        By {{book.author}} | Published: {{book.published_at}}
+      </mat-card-subtitle>
+      <mat-card-content>
+        <p><strong>Publisher:</strong> {{book.publisher}}</p>
+        <p><strong>Language:</strong> {{book.language}}</p>
+        <p><strong>Pages:</strong> {{book.pages}}</p>
+        <p><strong>ISBN:</strong> {{book.isbn}}</p>
+        <p><strong>Price:</strong> ₹{{book.price}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="addToCart(book.id)">
+          Add to Cart
+        </button>
+        <button mat-stroked-button color="accent" (click)="viewDetails(book.id)">
+          View Details
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div *ngIf="!loading && books.length === 0">
+    <p>No books available.</p>
+  </div>
+</div>

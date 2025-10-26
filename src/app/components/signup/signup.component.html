@@ -1,0 +1,28 @@
+<form (ngSubmit)="onSignup()" class="signup-form">
+  <mat-card>
+    <mat-card-title>Sign Up</mat-card-title>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+      <mat-error *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.invalid">
+        Name is required and must be at least 3 characters.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username">
+      <mat-error *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.invalid">
+        Username is required and must be at least 3 characters.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password">
+      <mat-error *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+        Password is required and must be at least 5 characters.
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loading">Sign Up</button>
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  </mat-card>
+</form>

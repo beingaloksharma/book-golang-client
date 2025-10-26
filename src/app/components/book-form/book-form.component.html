@@ -1,0 +1,75 @@
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()" class="book-form">
+  <mat-card>
+    <mat-card-title>{{ isEditMode ? 'Edit Book' : 'Add New Book' }}</mat-card-title>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>ID</mat-label>
+      <input matInput formControlName="id">
+      <mat-error *ngIf="bookForm.get('id')?.touched && bookForm.get('id')?.invalid">
+        ID is required.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title">
+      <mat-error *ngIf="bookForm.get('title')?.touched && bookForm.get('title')?.invalid">
+        Title is required.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Author</mat-label>
+      <input matInput formControlName="author">
+      <mat-error *ngIf="bookForm.get('author')?.touched && bookForm.get('author')?.invalid">
+        Author is required.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Publisher</mat-label>
+      <input matInput formControlName="publisher">
+      <mat-error *ngIf="bookForm.get('publisher')?.touched && bookForm.get('publisher')?.invalid">
+        Publisher is required.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Published At</mat-label>
+      <input matInput formControlName="published_at">
+      <mat-error *ngIf="bookForm.get('published_at')?.touched && bookForm.get('published_at')?.invalid">
+        Published date is required.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>ISBN</mat-label>
+      <input matInput formControlName="isbn">
+      <mat-error *ngIf="bookForm.get('isbn')?.touched && bookForm.get('isbn')?.invalid">
+        ISBN is required.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Pages</mat-label>
+      <input matInput type="number" formControlName="pages">
+      <mat-error *ngIf="bookForm.get('pages')?.touched && bookForm.get('pages')?.invalid">
+        Pages must be at least 1.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Language</mat-label>
+      <input matInput formControlName="language">
+      <mat-error *ngIf="bookForm.get('language')?.touched && bookForm.get('language')?.invalid">
+        Language is required.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Price</mat-label>
+      <input matInput type="number" formControlName="price">
+      <mat-error *ngIf="bookForm.get('price')?.touched && bookForm.get('price')?.invalid">
+        Price must be at least 1.
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loading">
+      {{ isEditMode ? 'Update Book' : 'Add Book' }}
+    </button>
+    <button mat-raised-button color="warn" type="button" (click)="onDelete()" *ngIf="isEditMode && !loading">
+      Delete Book
+    </button>
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  </mat-card>
+</form>

@@ -1,0 +1,15 @@
+<mat-card *ngIf="user">
+  <mat-card-title>Profile Details</mat-card-title>
+  <mat-list>
+    <mat-list-item>
+      <strong>Name:</strong> {{user.name}}
+    </mat-list-item>
+    <mat-list-item>
+      <strong>Username:</strong> {{user.username}}
+    </mat-list-item>
+    <mat-list-item *ngFor="let addr of user.address">
+      <strong>Address:</strong> {{addr.address}}
+    </mat-list-item>
+  </mat-list>
+</mat-card>
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>

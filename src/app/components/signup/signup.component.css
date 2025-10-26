@@ -1,0 +1,11 @@
+.signup-form {
+  max-width: 400px;
+  margin: 40px auto;
+}
+.full-width {
+  width: 100%;
+  margin-bottom: 10px;
+}
+mat-card {
+  padding: 24px;
+}

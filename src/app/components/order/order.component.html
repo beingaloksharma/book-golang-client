@@ -1,0 +1,40 @@
+<mat-card *ngFor="let order of orders" class="order-card">
+  <mat-card-title>Order #{{order.order_id}}</mat-card-title>
+  <mat-list>
+    <mat-list-item>
+      <strong>Name:</strong> {{order.name}}
+    </mat-list-item>
+    <mat-list-item>
+      <strong>Total:</strong> ₹{{order.total}}
+    </mat-list-item>
+    <mat-list-item>
+      <strong>Status:</strong> {{order.status.type}} ({{order.status.reason}})
+    </mat-list-item>
+    <mat-list-item>
+      <strong>Address:</strong> {{order.address}}
+    </mat-list-item>
+    <mat-list-item>
+      <strong>Order Date:</strong> {{order.order_date | date:'medium'}}
+    </mat-list-item>
+    <mat-list-item *ngIf="order.status.tracking_number">
+      <strong>Tracking:</strong> {{order.status.tracking_number}}
+    </mat-list-item>
+  </mat-list>
+  <mat-card-subtitle>Cart Items:</mat-card-subtitle>
+  <ul>
+    <li *ngFor="let item of order.cart">
+      <span>Book ID: {{item.book_id}}</span>
+      <span>Qty: {{item.quantity}}, Price: ₹{{item.price}}</span>
+    </li>
+  </ul>
+  <div *ngIf="!order.payment.paid">
+    <button mat-raised-button color="accent" (click)="payOrder(order.order_id)">
+      Pay Now
+    </button>
+  </div>
+  <div *ngIf="order.payment.paid">
+    <p>Paid via: <strong>{{order.payment.method}}</strong> on <strong>{{order.payment.paid_on | date:'shortDate'}}</strong></p>
+    <p>Reference: {{order.payment.reference}}</p>
+  </div>
+</mat-card>
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>

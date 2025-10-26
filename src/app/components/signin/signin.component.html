@@ -1,0 +1,21 @@
+<form [formGroup]="signinForm" (ngSubmit)="onSignin()" class="signin-form">
+  <mat-card>
+    <mat-card-title>Sign In</mat-card-title>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username">
+      <mat-error *ngIf="signinForm.get('username')?.touched && signinForm.get('username')?.invalid">
+        Username is required and must be at least 3 characters.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" formControlName="password">
+      <mat-error *ngIf="signinForm.get('password')?.touched && signinForm.get('password')?.invalid">
+        Password is required and must be at least 5 characters.
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="loading">Sign In</button>
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+  </mat-card>
+</form>

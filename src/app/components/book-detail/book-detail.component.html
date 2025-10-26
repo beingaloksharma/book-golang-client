@@ -1,0 +1,19 @@
+<mat-card *ngIf="book">
+  <mat-card-title>{{book.title}}</mat-card-title>
+  <mat-card-subtitle>
+    By {{book.author}} | Published: {{book.published_at}}
+  </mat-card-subtitle>
+  <mat-card-content>
+    <p><strong>Publisher:</strong> {{book.publisher}}</p>
+    <p><strong>Language:</strong> {{book.language}}</p>
+    <p><strong>Pages:</strong> {{book.pages}}</p>
+    <p><strong>ISBN:</strong> {{book.isbn}}</p>
+    <p><strong>Price:</strong> ₹{{book.price}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="addToCart()">Add to Cart</button>
+    <button mat-stroked-button color="accent" (click)="editBook()">Edit Book</button>
+    <button mat-stroked-button (click)="router.navigate(['/books'])">Back to List</button>
+  </mat-card-actions>
+</mat-card>
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
