@@ -6,9 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { CommonModule } from '@angular/common';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-signin',
@@ -16,7 +14,6 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./signin.component.css'],
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -24,7 +21,6 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    HttpClientModule  // <-- required for HttpClient DI
   ],
 })
 export class SigninComponent {

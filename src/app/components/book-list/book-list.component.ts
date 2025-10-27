@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Router } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-book-list',
@@ -14,13 +12,10 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./book-list.component.css'],
   standalone: true,
   imports: [
-    CommonModule,
     MatCardModule,
     MatButtonModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    CommonModule,
-    HttpClientModule,
   ]
 })
 export class BookListComponent implements OnInit {

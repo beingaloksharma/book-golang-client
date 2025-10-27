@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-cart',
@@ -14,14 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./cart.component.css'],
   standalone: true,
   imports: [
-    CommonModule,
     MatCardModule,
     MatTableModule,
     MatButtonModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    CommonModule,
-    HttpClientModule,
   ]
 })
 export class CartComponent implements OnInit {

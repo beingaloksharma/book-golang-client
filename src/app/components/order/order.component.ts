@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-order',
@@ -14,14 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./order.component.css'],
   standalone: true,
   imports: [
-    CommonModule,
     MatCardModule,
     MatListModule,
     MatButtonModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    CommonModule,
-    HttpClientModule,
   ]
 })
 export class OrderComponent implements OnInit {

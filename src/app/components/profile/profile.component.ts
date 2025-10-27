@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile',
@@ -13,13 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./profile.component.css'],
   standalone: true,
   imports: [
-    CommonModule,
     MatCardModule,
     MatListModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    CommonModule,
-    HttpClientModule,
   ]
 })
 export class ProfileComponent implements OnInit {

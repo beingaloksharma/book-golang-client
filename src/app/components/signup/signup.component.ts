@@ -5,16 +5,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCard, MatCardTitle } from "@angular/material/card";
 import { MatProgressBar } from "@angular/material/progress-bar";
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
   standalone: true,
-  imports: [MatFormFieldModule, MatCard, MatCardTitle, MatProgressBar,CommonModule, HttpClientModule]
+  imports: [MatFormFieldModule, MatCard, MatCardTitle, MatProgressBar]
 })
 export class SignupComponent {
   signupForm: FormGroup;

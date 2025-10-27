@@ -1,4 +1,3 @@
-import { RouterModule, Routes } from '@angular/router';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { BookListComponent } from './components/book-list/book-list.component';
@@ -6,7 +5,7 @@ import { BookDetailComponent } from './components/book-detail/book-detail.compon
 import { CartComponent } from './components/cart/cart.component';
 import { OrderComponent } from './components/order/order.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { NgModule } from '@angular/core';
+import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   { path: 'signup', component: SignupComponent },

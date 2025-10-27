@@ -8,8 +8,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-book-form',
@@ -17,7 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./book-form.component.css'],
   standalone: true,
   imports: [
-    CommonModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -25,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatProgressBarModule,
     MatSnackBarModule,
-    HttpClientModule,
   ]
 })
 export class BookFormComponent implements OnInit {
