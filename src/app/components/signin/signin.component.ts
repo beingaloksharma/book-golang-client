@@ -7,6 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router'; // Import router
 
 @Component({
   selector: 'app-signin',
@@ -14,6 +16,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   styleUrls: ['./signin.component.css'],
   standalone: true,
   imports: [
+    CommonModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -30,7 +33,8 @@ export class SigninComponent {
   constructor(
     private fb: FormBuilder,
     private api: ApiService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router // Inject it here
   ) {
     this.signinForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
@@ -46,10 +50,13 @@ export class SigninComponent {
     this.loading = true;
     this.api.signin(this.signinForm.value).subscribe({
       next: (res: any) => {
-        if (res.response) {
+        console.log
+        if (res['status_code'] == "200") {
           this.snackBar.open(res.status_message || 'Signin Successful!', 'Close', { duration: 3000 });
           this.signinForm.reset();
-          // handle token storage, and navigation as needed
+          // Store the token if required
+          localStorage.setItem('accessToken', res['response']);
+          this.router.navigate(['/books']); // Navigate to Books page
         } else {
           this.snackBar.open('Signin Failed. Invalid credentials.', 'Close', { duration: 3000 });
         }

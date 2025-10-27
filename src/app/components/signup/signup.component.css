@@ -1,11 +1,89 @@
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: #F4F6F8;
+}
+
 .signup-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.mat-card {
+  background: #fff;
+  padding: 32px 24px 24px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   max-width: 400px;
-  margin: 40px auto;
-}
-.full-width {
   width: 100%;
-  margin-bottom: 10px;
+  margin: 0 auto;
+  text-align: center;
 }
-mat-card {
-  padding: 24px;
+
+.mat-card-title {
+  font-size: 1.7em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.mat-form-field {
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+}
+
+.mat-label {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.mat-input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.mat-input:focus {
+  border-color: #3f51b5;
+}
+
+.mat-error {
+  color: #e53935;
+  font-size: 0.9em;
+  margin-top: 3px;
+  display: none; /* Show on validation error in JS/Angular */
+}
+
+.mat-raised-button {
+  background: #3f51b5;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px 32px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(63,81,181,0.12);
+  transition: background 0.15s;
+}
+
+.mat-raised-button:hover {
+  background: #32408f;
+}
+
+.mat-progress-bar {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3f51b5 50%, #bbdefb 100%);
+  border-radius: 2px;
+  margin-top: 20px;
+  display: none; /* Show when loading in JS/Angular */
 }

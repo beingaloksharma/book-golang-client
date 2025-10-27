@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-book-detail',
@@ -13,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./book-detail.component.css'],
   standalone: true,
   imports: [
+    CommonModule,
     MatCardModule,
     MatButtonModule,
     MatProgressBarModule,

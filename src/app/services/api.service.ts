@@ -9,34 +9,36 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  setToken(token: string) {
-    this.token = token;
-  }
+
 
   getHeaders() {
     return {
       headers: new HttpHeaders({
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.token}`
+        'Authorization': `Bearer ${localStorage['accessToken']}`
       })
     }
   }
 
   signup(data: any) {
+    console.log("Sign Up Data :: ", data)
     return this.http.post(`${this.apiUrl}/signup`, data);
   }
 
   signin(data: any) {
+    console.log("Sign In Data :: ", data)
     return this.http.post(`${this.apiUrl}/signin`, data);
   }
 
   getProfile(username: string) {
+    console.log("Requested Profile for Username :: ", username)
     return this.http.get(`${this.apiUrl}/user/profile/${username}`, this.getHeaders());
   }
 
   // Book operations (add, get, update, delete)
   addBook(book: any) {
+     console.log("Book :: ", book)
     return this.http.post(`${this.apiUrl}/book`, book, this.getHeaders());
   }
 

@@ -5,6 +5,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
@@ -12,6 +13,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
   styleUrls: ['./cart.component.css'],
   standalone: true,
   imports: [
+    CommonModule,
     MatCardModule,
     MatTableModule,
     MatButtonModule,

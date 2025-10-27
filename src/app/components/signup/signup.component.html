@@ -1,28 +1,22 @@
-<form (ngSubmit)="onSignup()" class="signup-form">
-  <mat-card>
-    <mat-card-title>Sign Up</mat-card-title>
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Name</mat-label>
-      <input matInput formControlName="name">
-      <mat-error *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.invalid">
-        Name is required and must be at least 3 characters.
-      </mat-error>
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Username</mat-label>
-      <input matInput formControlName="username">
-      <mat-error *ngIf="signupForm.get('username')?.touched && signupForm.get('username')?.invalid">
-        Username is required and must be at least 3 characters.
-      </mat-error>
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Password</mat-label>
-      <input matInput type="password" formControlName="password">
-      <mat-error *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
-        Password is required and must be at least 5 characters.
-      </mat-error>
-    </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" [disabled]="loading">Sign Up</button>
-    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
-  </mat-card>
+<form class="signup-form">
+  <div class="mat-card">
+    <div class="mat-card-title">Sign Up</div>
+    <div class="mat-form-field">
+      <label class="mat-label">Name</label>
+      <input class="mat-input" type="text" name="name" required minlength="3">
+      <div class="mat-error">Name is required and must be at least 3 characters.</div>
+    </div>
+    <div class="mat-form-field">
+      <label class="mat-label">Username</label>
+      <input class="mat-input" type="text" name="username" required minlength="3">
+      <div class="mat-error">Username is required and must be at least 3 characters.</div>
+    </div>
+    <div class="mat-form-field">
+      <label class="mat-label">Password</label>
+      <input class="mat-input" type="password" name="password" required minlength="5">
+      <div class="mat-error">Password is required and must be at least 5 characters.</div>
+    </div>
+    <button class="mat-raised-button" type="submit">Sign Up</button>
+    <div class="mat-progress-bar"></div>
+  </div>
 </form>

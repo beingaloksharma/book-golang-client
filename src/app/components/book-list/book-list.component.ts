@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-book-list',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./book-list.component.css'],
   standalone: true,
   imports: [
+    CommonModule,
     MatCardModule,
     MatButtonModule,
     MatSnackBarModule,

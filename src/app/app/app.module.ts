@@ -49,6 +49,7 @@ const routes: Routes = [
   declarations: [
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
